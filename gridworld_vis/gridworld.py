@@ -75,7 +75,7 @@ def move_keyframe(dx, dy, ratio):
 }}"""
 
 
-def gridworld(n=10, actions=None, tile2classes=None):
+def gridworld(n=10, actions=None, tile2classes=None, extra_css=""):
     dwg = draw_board(n=n, tile2classes=tile2classes)
 
     css_styles = CSS_STYLES
@@ -95,7 +95,7 @@ def gridworld(n=10, actions=None, tile2classes=None):
         move_css = "\n@keyframes move {\n" + '\n'.join(keyframes) + "\n}"
         css_styles += move_css
     
-    dwg.defs.add(dwg.style(css_styles))
+    dwg.defs.add(dwg.style(css_styles + extra_css))
     return dwg
 
 
