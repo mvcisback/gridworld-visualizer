@@ -48,7 +48,7 @@ def draw_board(n=3, tile2classes=None):
             'size': (f"0.9cm", f"0.9cm"),
         }
         if tile2classes is not None and tile2classes(x, y):
-            kwargs["class_"] = tile2classes(x, y)
+            kwargs["class_"] = tile2classes(x, n - y - 1)
 
         dwg.add(dwg.rect(**kwargs))
 
@@ -101,7 +101,6 @@ def gridworld(n=10, actions=None, tile2classes=None, extra_css=""):
 
 if __name__== '__main__':
     def tile2classes(x, y):
-        x, y = 7 - x, 7 - y
         if (3 <= x <= 4) and (2 <= y <= 5):
             return "water"
         elif (x in (0, 7)) and (y in (0, 7)):

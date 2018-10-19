@@ -28,7 +28,6 @@ import gridworld_visualizer as gv
 
 
 def tile2classes(x, y):
-    x, y = 7 - x, 7 - y
     if (3 <= x <= 4) and (2 <= y <= 5):
         return "water"
     elif (x in (0, 7)) and (y in (0, 7)):
