@@ -21,7 +21,7 @@
       stroke-width: 2;
       stroke: grey;
       animation: blinker 4s linear infinite;
-      animation: move 5s ease forwards;
+      animation: move 5s ease infinite;
     }
     @keyframes blinker {
        50% {
